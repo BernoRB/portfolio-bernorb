@@ -1,5 +1,8 @@
 ---
-
+import AboutMe from "../sectionscomp/aboutme.astro";
+import Experience from "../sectionscomp/workexp.astro";
+import Projects from "../sectionscomp/projects.astro";
+import Sidebar from "../sectionscomp/sidebar.astro";
 ---
 
 <html lang="en">
@@ -8,9 +11,22 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-background min-h-screen">
+		<div class="container max-w-screen-lg mx-auto px-4 py-8">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				{/* (Profile and Skills) Sidebar Section */}
+				<Sidebar />
+				{/* Main Section */}
+				<main class="md:col-span-2">
+					{/* About Me Section */}
+					<AboutMe />
+					{/* Projects Section */}
+					<Projects />
+					{/* Experience Section */}
+					<Experience />
+				</main>
+			</div>
+		</div>
 	</body>
 </html>

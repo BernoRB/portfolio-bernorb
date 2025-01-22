@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import CalendarDays from "../icons/calendar-days.astro";
+import CardContent from "./ui/card/card-content.astro";
+import Card from "./ui/card/card.astro";
+const jobs = [
+  {
+    role: "Backend Developer",
+    company: "Personal Pay",
+    logo: "/teco.jpg",
+    duration: "Mayo 2022 - Presente",
+    description:
+      "Desarrollador backend en el equipo Soluciones a Vendedores. Desarrollo y mantenimiento de APIs dentro de una arquitectura de microservicios con NodeJs, NestJS y Kotlin."
+    ,
+    description2:
+      "Participé en el proceso end-to-end de servicios que abarcaron diferentes funcionalidades: cálculo de impuestos para transacciones; acumulación y comprobación de límites transaccionales; reportería; generación de QR para cobros; solicitud, envío, gestión y activación de QR físico para tiendas; gestión de comisiones y plazos de acreditación de cobros; API Checkout para que otras empresas integren nuestra solución de cobros; entre otras."
+    ,
+      link: "https://personalpay.com",
+    images: [],
+  },
+  {
+    role: "Backend Developer", // TODO: Replace with actual role
+    company: "Accenture Argentina", // TODO: Replace with actual company name
+    logo: "/accntr.jpg", // TODO: Replace with actual logo
+    duration: "Abril 2021 - Mayo 2022",
+    description:
+      "Desarrollo y mantenimiento de aplicaciones de IVR (respuesta de voz interactiva) de un banco. Tecnologías empleadas: Convergys InVision Studio (internamente maneja JavaScript) para el grueso de los desarrollos y C# para el consumo de APIs.Desarrollo y mantenimiento de aplicaciones de IVR (respuesta de voz interactiva) de un banco. Tecnologías empleadas: Convergys InVision Studio (internamente maneja JavaScript) para el grueso de los desarrollos y C# para el consumo de APIs."
+    ,
+    link: "https://accenture.com.ar",
+    images: ["/devvault.png", "/devvault.png"],
+  },
+];
+---
+<h2 class="text-xl font-bold mb-4">Experiencia Profesional</h2>
+<Card>
+  <CardContent className="pt-6">
+    <ul class="space-y-8">
+      {
+        jobs.map((j, i) => (
+          <li class="border-b last:border-b-0 pb-8 last:pb-0">
+            {/* Job Details */}
+            <div class="flex items-center space-x-4">
+              <Image
+                src={j.logo}
+                alt={j.company}
+                width={40}
+                height={40}
+                class="rounded-md border shadow-md object-cover"
+              />
+              <div>
+                <h3 class="font-semibold">{j.role}</h3>
+                <p class="text-sm text-muted-foreground">{j.company}</p>
+              </div>
+            </div>
+            <p class="text-xs text-muted-foreground mt-2 flex items-center">
+              <CalendarDays class="size-3 mr-2" />
+              {j.duration}
+            </p>
+            <p class="text-sm mt-2">{j.description}</p>
+            <p class="text-sm mt-2">{j.description2}</p>
+            {/* Job Images */}
+            {/* <JobImages
+              role={j.role}
+              link={j.link}
+              images={j.images}
+              duration={j.duration}
+            /> */}
+          </li>
+        ))
+      }
+    </ul>
+  </CardContent>
+</Card>

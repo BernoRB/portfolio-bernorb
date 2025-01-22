@@ -1,0 +1,37 @@
+---
+import Badge from "./ui/badge.astro";
+import CardContent from "./ui/card/card-content.astro";
+import CardHeader from "./ui/card/card-header.astro";
+import CardTitle from "./ui/card/card-title.astro";
+import Card from "./ui/card/card.astro";
+const skills = [
+  "Prueba",
+  "Otro",
+  "Sape",
+  "Saperoni",
+  "Suuuuuuu",
+  "Elbicho",
+  "C",
+  "Bernouli",
+  "Chano",
+  "OMG",
+  "Este",
+  "Tambien",
+];
+---
+<Card className="mt-6">
+  <CardHeader>
+    <CardTitle>Skills</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <div class="flex flex-wrap gap-2">
+      {
+        skills.map((s, i) => (
+          <Badge key={i} variant="secondary">
+            {s}
+          </Badge>
+        ))
+      }
+    </div>
+  </CardContent>
+</Card>

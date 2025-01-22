@@ -1,0 +1,75 @@
+---
+import ExternalLink from "../icons/external-links.astro";
+import CardContent from "./ui/card/card-content.astro";
+import Card from "./ui/card/card.astro";
+const projects = [
+  {
+    title: "Proyecto n1",
+    description:
+      "Un gran proyecto muy lindo",
+    tech: "NestJS",
+    link: "#",
+  },
+  {
+    title: "Proyecto n2",
+    description: "Otro proyecto que la rompe toda",
+    tech: "NodeJS",
+    link: "#",
+  },
+  {
+    title: "Proyecto n3",
+    description: "Cada proyecto mejor que el anterior",
+    tech: "Kotlin",
+    link: "#",
+  },
+  {
+    title: "Proyecto n4",
+    description:
+      "Este revoluciono el mundo",
+    tech: "Vue.js",
+    link: "#",
+  },
+];
+const techColors = {
+  NestJS: '#0DDBFF',
+  NodeJS: '#42b883',
+  Kotlin: '#e0234e'
+};
+---
+<h2 class="text-xl font-bold mb-4">Proyectos Personales</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+  {
+    projects.map((p, i) => (
+      <Card key={i}>
+        <CardContent className="pt-6 h-full">
+          <div class="flex flex-col h-full">
+            <a href={p.link} class="font-semibold text-primary hover:underline">
+              {p.title}
+            </a>
+            <p class="text-sm text-muted-foreground mt-1 mb-4">
+              {p.description}
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div
+                  class:list={['size-4 rounded-full border border-white/10']}
+                  style={`background-color: ${techColors[p.tech as keyof typeof techColors]}`}
+                />
+                <span class="text-xs font-medium text-muted-foreground">
+                  {p.tech}
+                </span>
+              </div>
+              <a
+                href={p.link}
+                class="flex items-center gap-2 text-sm text-primary hover:underline"
+              >
+                Ver proyecto
+                <ExternalLink class="inline-block size-3" />
+              </a>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    ))
+  }
+</div>
