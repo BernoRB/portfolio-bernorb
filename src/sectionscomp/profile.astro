@@ -3,14 +3,19 @@ import { Image } from "astro:assets";
 import Button from "./ui/button.astro";
 import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
+import GithubIcon from '../icons/github.astro'
+import LinkedinIcon from '../icons/linkedin.astro'
+
 const socials = [
   {
     name: "Github",
     link: "https://github.com/bernorb",
+    icon: GithubIcon
   },
   {
     name: "LinkedIn",
     link: "https://linkedin.com/in/bernaberb",
+    icon: LinkedinIcon
   }
 ];
 ---
@@ -57,10 +62,10 @@ const socials = [
                 aria-label={`${s.name} Logo`}
                 class="cursor-pointer flex items-center gap-2 group"
               >
-                {/* {s.icon} */}
-                <p class="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                  /{username}
-                </p>
+                {s.icon && <s.icon class='size-4' />}
+                <span class='transition-color text-sm text-muted-foreground duration-200 ease-linear group-hover:text-primary dark:group-hover:text-blue-500'>
+                  {username}
+                </span>
               </a>
             );
           })
