@@ -9,8 +9,8 @@ interface Props {
     | "link";
   size?: "default" | "sm" | "lg" | "icon";
   className?: string;
-  asChild?: boolean; // Si se desea implementar algo similar a Radix `Slot`
-  [key: string]: any; // Para manejar cualquier otra propiedad como `onClick`
+  asChild?: boolean;
+  [key: string]: any;
 }
 
 const buttonVariants = {

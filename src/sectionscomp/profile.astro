@@ -8,15 +8,15 @@ import LinkedinIcon from '../icons/linkedin.astro'
 
 const socials = [
   {
+    name: "LinkedIn",
+    link: "https://linkedin.com/in/bernaberb",
+    icon: LinkedinIcon
+  },
+  {
     name: "Github",
     link: "https://github.com/bernorb",
     icon: GithubIcon
   },
-  {
-    name: "LinkedIn",
-    link: "https://linkedin.com/in/bernaberb",
-    icon: LinkedinIcon
-  }
 ];
 ---
 <Card>
@@ -34,18 +34,26 @@ const socials = [
           class="rounded-full size-12 md:w-full h-auto object-cover border-2"
         />
         <div class="flex flex-col items-start justify-center">
-          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">Bernabe Rodriguez</h1>
+          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">Bernabe Rodriguez B.</h1>
           <p class="text-sm md:text-base text-muted-foreground">
             Backend Software Developer
           </p>
         </div>
       </div>
-      <p class="mt-2 text-start text-sm text-muted-foreground">
+      <p class="mt-2 text-start text-sm text-muted-foreground text-justify">
         Desarrollador backend con casi 4 años de experiencia principalmente en rubro fintech/banca.
       </p>
-      <Button className="mt-4 w-full">
-        <a target="_blank" href="/resume.pdf" class="font-semibold">
-          CHARLEMOS
+      <p class="text-start text-sm text-muted-foreground text-justify">
+        Para ver mi informacion completa te invito a mi LinkedIn o a descargar mi curriculum.
+      </p>
+      <Button className="mt-2 w-full">
+        <a target="_blank" href="/RodriguezBernabe_CV_Spanish.pdf" class="font-semibold">
+          Descargar CV .pdf
+        </a>
+      </Button>
+      <Button className="mt-0 w-full">
+        <a href="mailto:bernabrb@gmail.com" class="font-semibold">
+          Enviame un mail
         </a>
       </Button>
       <div
