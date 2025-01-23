@@ -3,15 +3,20 @@ import { Image } from "astro:assets";
 import Button from "./ui/button.astro";
 import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
+import GithubIcon from '../icons/github.astro'
+import LinkedinIcon from '../icons/linkedin.astro'
+
 const socials = [
-  {
-    name: "Github",
-    link: "https://github.com/bernorb",
-  },
   {
     name: "LinkedIn",
     link: "https://linkedin.com/in/bernaberb",
-  }
+    icon: LinkedinIcon
+  },
+  {
+    name: "Github",
+    link: "https://github.com/bernorb",
+    icon: GithubIcon
+  },
 ];
 ---
 <Card>
@@ -29,18 +34,26 @@ const socials = [
           class="rounded-full size-12 md:w-full h-auto object-cover border-2"
         />
         <div class="flex flex-col items-start justify-center">
-          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">Bernabe Rodriguez</h1>
+          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">Bernabe Rodriguez B.</h1>
           <p class="text-sm md:text-base text-muted-foreground">
             Backend Software Developer
           </p>
         </div>
       </div>
-      <p class="mt-2 text-start text-sm text-muted-foreground">
+      <p class="mt-2 text-start text-sm text-muted-foreground text-justify">
         Desarrollador backend con casi 4 años de experiencia principalmente en rubro fintech/banca.
       </p>
-      <Button className="mt-4 w-full">
-        <a target="_blank" href="/resume.pdf" class="font-semibold">
-          CHARLEMOS
+      <p class="text-start text-sm text-muted-foreground text-justify">
+        Para ver mi informacion completa te invito a mi LinkedIn o a descargar mi curriculum.
+      </p>
+      <Button className="mt-2 w-full">
+        <a target="_blank" href="/RodriguezBernabe_CV_Spanish.pdf" class="font-semibold">
+          Descargar CV .pdf
+        </a>
+      </Button>
+      <Button className="mt-0 w-full">
+        <a href="mailto:bernabrb@gmail.com" class="font-semibold">
+          Enviame un mail
         </a>
       </Button>
       <div
@@ -57,10 +70,10 @@ const socials = [
                 aria-label={`${s.name} Logo`}
                 class="cursor-pointer flex items-center gap-2 group"
               >
-                {/* {s.icon} */}
-                <p class="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                  /{username}
-                </p>
+                {s.icon && <s.icon class='size-4' />}
+                <span class='transition-color text-sm text-muted-foreground duration-200 ease-linear group-hover:text-primary dark:group-hover:text-blue-500'>
+                  {username}
+                </span>
               </a>
             );
           })

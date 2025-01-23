@@ -1,8 +1,9 @@
 ---
-import AboutMe from "../sectionscomp/aboutme.astro";
 import Experience from "../sectionscomp/workexp.astro";
 import Projects from "../sectionscomp/projects.astro";
 import Sidebar from "../sectionscomp/sidebar.astro";
+import Education from "../sectionscomp/education.astro";
+import Courses from "../sectionscomp/courses.astro"
 ---
 
 <html lang="en">
@@ -19,12 +20,14 @@ import Sidebar from "../sectionscomp/sidebar.astro";
 				<Sidebar />
 				{/* Main Section */}
 				<main class="md:col-span-2">
-					{/* About Me Section */}
-					<AboutMe />
 					{/* Projects Section */}
 					<Projects />
 					{/* Experience Section */}
 					<Experience />
+					{/* Education Section */}
+					<Education />
+					{/* Courses Section */}
+					<Courses />
 				</main>
 			</div>
 		</div>
