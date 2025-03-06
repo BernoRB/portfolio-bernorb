@@ -4,68 +4,113 @@ import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
 const projects = [
   {
-    title: "Proyecto n1",
+    title: "API Bancaria",
     description:
-      "A ser completado cuando exista yada yada",
-    tech: "NestJS",
-    link: "#",
+      "Aplicación backend construida con NestJS y PostgreSQL que simula operaciones bancarias básicas. Implementa autenticación JWT, gestión de usuarios, depósitos, transferencias y un sistema de límites operacionales configurable. Pruebas unitarias completas y documentación API con Swagger.",
+    tech: ["NestJS", "NodeJS", "PostgreSQL", "JWT"],
+    links: [
+      {
+        text: "Ver código",
+        url: "https://github.com/BernoRB/simple-banking-project"
+      },
+      {
+        text: "Ver Swagger",
+        url: "https://github.com/BernoRB/simple-banking-project" // Cambiar a URL del swagger cuando esté disponible
+      }
+    ]
   },
   {
-    title: "Proyecto n2",
-    description: "Esto tambien a ser completado",
-    tech: "NodeJS",
-    link: "#",
+    title: "Portfolio",
+    description: "Este mismo portfolio/cv web en el que estamos. Construido con Astro web framework.",
+    tech: ["Astro", "Tailwind CSS"],
+    links: [
+      {
+        text: "Ver código",
+        url: "https://github.com/BernoRB/portfolio-bernorb"
+      }
+    ]
   },
   // {
   //   title: "Proyecto n3",
   //   description: "Cada proyecto mejor que el anterior",
-  //   tech: "Kotlin",
-  //   link: "#",
+  //   tech: ["Kotlin", "Android"],
+  //   links: [
+  //     {
+  //       text: "Ver código",
+  //       url: "#"
+  //     }
+  //   ]
   // },
   // {
   //   title: "Proyecto n4",
   //   description:
   //     "Este revoluciono el mundo",
-  //   tech: "Vue.js",
-  //   link: "#",
+  //   tech: ["Vue.js", "Node.js"],
+  //   links: [
+  //     {
+  //       text: "Ver código",
+  //       url: "#"
+  //     },
+  //     {
+  //       text: "Ver demo",
+  //       url: "#"
+  //     }
+  //   ]
   // },
 ];
 const techColors = {
   NestJS: '#0DDBFF',
   NodeJS: '#42b883',
-  Kotlin: '#e0234e'
+  Kotlin: '#e0234e',
+  PostgreSQL: '#336791',
+  JWT: '#000000',
+  Astro: '#FF5D01',
+  'Tailwind CSS': '#38B2AC',
+  'Vue.js': '#4FC08D',
+  Android: '#3DDC84'
 };
 ---
 <h2 class="text-xl font-bold mb-4">Proyectos Personales</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="grid grid-cols-1 gap-4 mb-6">
   {
     projects.map((p, i) => (
       <Card key={i}>
         <CardContent className="pt-6 h-full">
           <div class="flex flex-col h-full">
-            <a href={p.link} class="font-semibold text-primary hover:underline">
+            <a href={p.links[0].url} class="font-semibold text-primary hover:underline">
               {p.title}
             </a>
-            <p class="text-sm text-muted-foreground mt-1 mb-4">
+            <p class="text-sm text-muted-foreground mt-1 mb-4 text-justify">
               {p.description}
             </p>
-            <div class="mt-auto flex items-center justify-between">
-              <div class="flex items-center space-x-2">
-                <div
-                  class:list={['size-4 rounded-full border border-white/10']}
-                  style={`background-color: ${techColors[p.tech as keyof typeof techColors]}`}
-                />
-                <span class="text-xs font-medium text-muted-foreground">
-                  {p.tech}
-                </span>
+            <div class="mt-auto flex justify-between">
+              {/* Lista de tecnologías a la izquierda */}
+              <div class="flex flex-wrap gap-3">
+                {p.tech.map(tech => (
+                  <div class="flex items-center space-x-2">
+                    <div
+                      class:list={['size-4 rounded-full border border-white/10']}
+                      style={`background-color: ${techColors[tech as keyof typeof techColors] || '#888888'}`}
+                    />
+                    <span class="text-xs font-medium text-muted-foreground">
+                      {tech}
+                    </span>
+                  </div>
+                ))}
               </div>
-              <a
-                href={p.link}
-                class="flex items-center gap-2 text-sm text-primary hover:underline"
-              >
-                Ver proyecto
-                <ExternalLink class="inline-block size-3" />
-              </a>
+              
+              {/* Enlaces a la derecha */}
+              <div class="flex flex-col gap-2 items-end">
+                {p.links.map(link => (
+                  <a
+                    href={link.url}
+                    class="flex items-center gap-2 text-sm text-primary hover:underline"
+                  >
+                    {link.text}
+                    <ExternalLink class="inline-block size-3" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </CardContent>
