@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.1] - 2025-03-06
+- Cambios visuales en la sección de proyectos.
+- Se agregan proyectos.
+
 ## [0.1.0] - 2025-01-23
 - Se agrega seccion educacion
 - Se agrega seccion cursos y certificados
