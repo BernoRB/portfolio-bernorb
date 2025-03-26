@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.2] - 2025-03-26
+- Fix bug descripcion empleo.
+
 ## [0.1.1] - 2025-03-06
 - Cambios visuales en la sección de proyectos.
 - Se agregan proyectos.
