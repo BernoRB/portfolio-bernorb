@@ -4,6 +4,18 @@ import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
 const projects = [
   {
+    title: "Sistema de Procesamiento de Imágenes en la Nube",
+    description:
+      "Arquitectura de microservicios para procesamiento asíncrono de imágenes en AWS. Incluye Upload Service (NestJS), Processing Service (Node+Express), y funciones Lambda. Implementa comunicación asíncrona mediante colas SQS, almacenamiento en S3 y DynamoDB. Infraestructura definida como código con Terraform y despliegue automatizado con GitHub Actions.",
+    tech: ["NodeJS", "NestJS", "TypeScript", "AWS", "Terraform", "Docker", "IaC", "Microservices"],
+    links: [
+      {
+        text: "Ver código",
+        url: "https://github.com/bernorb/projx-img-processing"
+      }
+    ]
+  },
+  {
     title: "API Bancaria",
     description:
       "Aplicación backend construida con NestJS y PostgreSQL que simula operaciones bancarias básicas. Implementa autenticación JWT, gestión de usuarios, depósitos, transferencias y un sistema de límites operacionales configurable. Pruebas unitarias completas y documentación API con Swagger.",
@@ -67,7 +79,13 @@ const techColors = {
   Astro: '#FF5D01',
   'Tailwind CSS': '#38B2AC',
   'Vue.js': '#4FC08D',
-  Android: '#3DDC84'
+  Android: '#3DDC84',
+  TypeScript: '#3178C6',
+  AWS: '#FF9900',
+  Terraform: '#7B42BC',
+  Docker: '#2496ED',
+  IaC: '#326CE5',
+  Microservices: '#FF6B6B'
 };
 ---
 <h2 class="text-xl font-bold mb-4">Proyectos Personales</h2>
@@ -98,7 +116,7 @@ const techColors = {
                   </div>
                 ))}
               </div>
-              
+             
               {/* Enlaces a la derecha */}
               <div class="flex flex-col gap-2 items-end">
                 {p.links.map(link => (

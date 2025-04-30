@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.3] - 2025-04-30
+- Agrego nuevo proyecto realizado.
+
 ## [0.1.2] - 2025-03-26
 - Fix bug descripcion empleo.
 
