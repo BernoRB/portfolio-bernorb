@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.4] - 2025-05-30
+- Agrego nuevo proyecto realizado: analizador de stock de mercado con Node + Kafka + Grafana.
+
 ## [0.1.3] - 2025-04-30
 - Agrego nuevo proyecto realizado.
 

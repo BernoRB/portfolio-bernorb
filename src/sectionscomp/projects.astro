@@ -3,6 +3,18 @@ import ExternalLink from "../icons/external-links.astro";
 import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
 const projects = [
+ {
+    title: "Sistema de Procesamiento de Datos de Mercado en Tiempo Real",
+    description:
+      "Arquitectura de microservicios para recolección y procesamiento de datos bursátiles en tiempo real. Incluye Stock Collector (Node.js) que obtiene datos de Yahoo Finance API, Data Processor (Node.js) que consume mensajes de Kafka, y almacenamiento en PostgreSQL. Implementa comunicación asíncrona mediante Apache Kafka, visualización con Grafana, y toda la infra dockerizada.",
+    tech: ["NodeJS", "TypeScript", "Kafka", "PostgreSQL", "Grafana", "Docker", "Microservices"],
+    links: [
+      {
+        text: "Ver código",
+        url: "https://github.com/BernoRB/realtime-stock-kafka"
+      }
+    ]
+  },
   {
     title: "Sistema de Procesamiento de Imágenes en la Nube",
     description:
@@ -50,21 +62,6 @@ const projects = [
   //   ]
   // },
   // {
-  //   title: "Proyecto n4",
-  //   description:
-  //     "Este revoluciono el mundo",
-  //   tech: ["Vue.js", "Node.js"],
-  //   links: [
-  //     {
-  //       text: "Ver código",
-  //       url: "#"
-  //     },
-  //     {
-  //       text: "Ver demo",
-  //       url: "#"
-  //     }
-  //   ]
-  // },
 ];
 const techColors = {
   NestJS: '#0DDBFF',
@@ -81,7 +78,9 @@ const techColors = {
   Terraform: '#7B42BC',
   Docker: '#2496ED',
   IaC: '#326CE5',
-  Microservices: '#FF6B6B'
+  Microservices: '#FF6B6B',
+  Kafka: '#231F20',
+  Grafana: '#F46800'
 };
 ---
 <h2 class="text-xl font-bold mb-4">Proyectos Personales</h2>
