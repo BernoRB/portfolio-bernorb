@@ -28,6 +28,18 @@ const projects = [
     ]
   },
   {
+  title: "CSV Transactions Analyzer",
+  description:
+    "Simple analizador de transacciones CSV que detecta actividad sospechosa y agrupa datos por usuario. Backend construido con Python+FastAPI. Frontend simple con Vue.js que permite carga de archivos y descarga automática de resultados procesados.",
+  tech: ["Python", "FastAPI", "Vue.js"],
+  links: [
+    {
+      text: "Ver código",
+      url: "https://github.com/BernoRB/python-csv-analyzer"
+    }
+  ]
+  },
+  {
     title: "API Bancaria",
     description:
       "Aplicación backend construida con NestJS y PostgreSQL que simula operaciones bancarias básicas. Implementa autenticación JWT, gestión de usuarios, depósitos, transferencias y un sistema de límites operacionales configurable. Pruebas unitarias completas y documentación API con Swagger.",
@@ -80,7 +92,9 @@ const techColors = {
   IaC: '#326CE5',
   Microservices: '#FF6B6B',
   Kafka: '#231F20',
-  Grafana: '#F46800'
+  Grafana: '#F46800',
+  Python: '#3776AB',
+  FastAPI: '#009688',
 };
 ---
 <h2 class="text-xl font-bold mb-4">Proyectos Personales</h2>

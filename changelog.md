@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.5] - 2025-05-31
+- Agrego nuevo proyecto realizado: script analizador de CSV en python con front en Vue.
+
 ## [0.1.4] - 2025-05-30
 - Agrego nuevo proyecto realizado: analizador de stock de mercado con Node + Kafka + Grafana.
 
